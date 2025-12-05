@@ -1,0 +1,23 @@
+<div class="dropdown">
+  <button
+    class="btn btn-sm btn-outline-secondary dropdown-toggle"
+    type="button"
+    id="languageDropdown"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+  >
+    🌐 {{ getSelectedLanguageName() }}
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li *ngFor="let lang of languages">
+      <a
+        class="dropdown-item"
+        href="#"
+        (click)="selectLanguage(lang.code); $event.preventDefault()"
+        [class.active]="selectedLanguage === lang.code"
+      >
+        {{ lang.name }}
+      </a>
+    </li>
+  </ul>
+</div>

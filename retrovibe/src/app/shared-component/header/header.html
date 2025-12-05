@@ -1,0 +1,86 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <!-- Brand -->
+    <a class="navbar-brand fw-bold" href="#">RetroVibe</a>
+
+    <!-- Toggle Button for Mobile -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <!-- <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home">Music</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home">Podcasts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/pro">Pro</a>
+        </li>
+      </ul>
+
+      <!-- Right Side: Music Languages + Login Section (Fixed Structure) -->
+      <div class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center gap-3">
+        <!-- Music Languages Dropdown -->
+        <div class="text-center">
+          <div class="dropdown">
+            <!-- <button
+              class="btn btn-sm btn-outline-light dropdown-toggle"
+              type="button"
+              id="musicLangToggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Music Languages
+            </button> -->
+            <!-- Angular component -->
+            <app-language-selector
+              [selectedLanguage]="selectedLanguage"
+              (languageChange)="onLanguageChange($event)"
+            >
+            </app-language-selector>
+          </div>
+          <!-- <small class="text-light d-block mt-1">{{ getSelectedLanguageName() }}</small> -->
+        </div>
+
+        <!-- Login/Logout Section -->
+        <div class="d-flex align-items-center gap-2">
+          <!-- Not Logged In: Show Login Form -->
+          <ng-container *ngIf="!isLoggedIn">
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              placeholder="Username"
+              [(ngModel)]="loginUsername"
+              (keyup.enter)="login()"
+              style="width: 150px"
+            />
+            <button class="btn btn-primary btn-sm" (click)="login()">Login</button>
+          </ng-container>
+
+          <!-- Logged In: Show Username and Logout -->
+          <ng-container *ngIf="isLoggedIn">
+            <span class="text-light me-3"
+              >Welcome, <strong>{{ userName }}</strong></span
+            >
+            <button class="btn btn-danger btn-sm" (click)="logout()">Logout</button>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,42 @@
+<div class="d-flex flex-column h-100 bg-light">
+  <!-- Browse Section -->
+  <div class="p-3 border-bottom">
+    <h6 class="text-uppercase text-muted fw-bold mb-3">Browse</h6>
+    <div class="list-group list-group-flush">
+      <button
+        *ngFor="let item of menuItems"
+        type="button"
+        class="list-group-item list-group-item-action border-0 ps-2"
+        [class.active]="selectedItem === item.label"
+        (click)="selectItem(item.label)"
+      >
+        <span class="me-2">{{ item.icon }}</span>
+        {{ item.label }}
+      </button>
+    </div>
+  </div>
+
+  <!-- Library Section -->
+  <div class="p-3 border-bottom">
+    <h6 class="text-uppercase text-muted fw-bold mb-3">Library</h6>
+    <div class="list-group list-group-flush">
+      <button
+        *ngFor="let item of libraryItems"
+        type="button"
+        class="list-group-item list-group-item-action border-0 ps-2"
+        [class.active]="selectedItem === item.label"
+        (click)="selectItem(item.label)"
+      >
+        <span class="me-2">{{ item.icon }}</span>
+        {{ item.label }}
+      </button>
+    </div>
+  </div>
+
+  <!-- New Playlist Button -->
+  <div class="p-3 mt-auto">
+    <button type="button" class="btn btn-outline-primary btn-sm w-100">
+      <span class="me-2">➕</span> New Playlist
+    </button>
+  </div>
+</div>

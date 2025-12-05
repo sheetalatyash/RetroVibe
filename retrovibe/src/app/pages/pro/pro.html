@@ -1,0 +1,59 @@
+<div class="container-fluid px-0">
+  <app-header></app-header>
+  <div class="p-4 mb-4 rounded-3 bg-light">
+    <div class="d-flex align-items-center justify-content-between">
+      <div>
+        <h2 class="mb-1">Play without ads. Set new JioTunes every day.</h2>
+        <p class="text-muted mb-0">Download unlimited music and enjoy ad-free listening</p>
+      </div>
+      <div>
+        <button class="btn btn-primary btn-lg">Start Free Trial</button>
+      </div>
+    </div>
+  </div>
+  <div class="px-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h3>Available Plans</h3>
+      <div>
+        <div class="btn-group" role="group" aria-label="filters">
+          <button type="button" class="btn btn-outline-secondary btn-sm active">All</button>
+          <button type="button" class="btn btn-outline-secondary btn-sm">Individual</button>
+          <button type="button" class="btn btn-outline-secondary btn-sm">JioTunes+</button>
+          <button type="button" class="btn btn-outline-secondary btn-sm">Student</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-3">
+      <div *ngFor="let plan of plans" class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <div>
+                <h5 class="card-title mb-1">{{ plan.title }}</h5>
+                <p class="text-muted small mb-0">One of our best value plans</p>
+              </div>
+              <div class="text-end">
+                <div class="fw-bold fs-5">
+                  {{ plan.price }} <small class="text-muted">/ month</small>
+                </div>
+                <small class="text-muted">Save up to 17%</small>
+              </div>
+            </div>
+
+            <ul class="list-unstyled mb-4">
+              <li *ngFor="let f of plan.features" class="d-flex align-items-center mb-2">
+                <span class="me-2 text-success">✔</span>
+                <span class="text-muted">{{ f }}</span>
+              </li>
+            </ul>
+
+            <div class="d-grid">
+              <button class="btn btn-success">Choose</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
