@@ -1,9 +1,9 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-language-selector',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './language-selector.html',
   styleUrl: './language-selector.scss',
 })

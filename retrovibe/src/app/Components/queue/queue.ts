@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 
 interface Song {
   id: number;
@@ -10,7 +10,7 @@ interface Song {
 
 @Component({
   selector: 'app-queue',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './queue.html',
   styleUrl: './queue.scss',
 })

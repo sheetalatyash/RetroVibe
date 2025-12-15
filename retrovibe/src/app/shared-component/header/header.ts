@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { LanguageSelector } from '../../Components/language-selector/language-selector';
 
 @Component({
   selector: 'app-header',
-  imports: [CommonModule, FormsModule, LanguageSelector, RouterLink],
+  imports: [FormsModule, LanguageSelector, RouterLink],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })

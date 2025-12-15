@@ -7,38 +7,39 @@
   <!-- Queue List -->
   <div class="flex-grow-1 overflow-auto">
     <div class="list-group list-group-flush">
-      <div
-        *ngFor="let song of songs"
-        class="list-group-item px-3 py-2 border-0"
-        [class.bg-info]="song.id === currentSongId"
-        [class.bg-info-subtle]="song.id === currentSongId"
-      >
-        <div class="d-flex justify-content-between align-items-start">
-          <div class="flex-grow-1">
-            <div class="fw-bold text-dark">{{ song.title }}</div>
-            <small class="text-muted">{{ song.artist }}</small>
-          </div>
-          <div class="d-flex align-items-center gap-2">
-            <small class="text-muted me-2">{{ song.duration }}</small>
-            <button
-              type="button"
-              class="btn btn-sm btn-link p-0 text-success"
-              (click)="playFrom(song.id)"
-              title="Play from here"
-            >
-              ▶
-            </button>
-            <button
-              type="button"
-              class="btn btn-sm btn-link p-0 text-danger"
-              (click)="removeSong(song.id)"
-              title="Remove from queue"
-            >
-              ✕
-            </button>
+      @for (song of songs; track song) {
+        <div
+          class="list-group-item px-3 py-2 border-0"
+          [class.bg-info]="song.id === currentSongId"
+          [class.bg-info-subtle]="song.id === currentSongId"
+          >
+          <div class="d-flex justify-content-between align-items-start">
+            <div class="flex-grow-1">
+              <div class="fw-bold text-dark">{{ song.title }}</div>
+              <small class="text-muted">{{ song.artist }}</small>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+              <small class="text-muted me-2">{{ song.duration }}</small>
+              <button
+                type="button"
+                class="btn btn-sm btn-link p-0 text-success"
+                (click)="playFrom(song.id)"
+                title="Play from here"
+                >
+                ▶
+              </button>
+              <button
+                type="button"
+                class="btn btn-sm btn-link p-0 text-danger"
+                (click)="removeSong(song.id)"
+                title="Remove from queue"
+                >
+                ✕
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      }
     </div>
   </div>
 

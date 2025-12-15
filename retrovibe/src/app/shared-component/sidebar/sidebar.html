@@ -3,16 +3,17 @@
   <div class="p-3 border-bottom">
     <h6 class="text-uppercase text-muted fw-bold mb-3">Browse</h6>
     <div class="list-group list-group-flush">
-      <button
-        *ngFor="let item of menuItems"
-        type="button"
-        class="list-group-item list-group-item-action border-0 ps-2"
-        [class.active]="selectedItem === item.label"
-        (click)="selectItem(item.label)"
-      >
-        <span class="me-2">{{ item.icon }}</span>
-        {{ item.label }}
-      </button>
+      @for (item of menuItems; track item) {
+        <button
+          type="button"
+          class="list-group-item list-group-item-action border-0 ps-2"
+          [class.active]="selectedItem === item.label"
+          (click)="selectItem(item.label)"
+          >
+          <span class="me-2">{{ item.icon }}</span>
+          {{ item.label }}
+        </button>
+      }
     </div>
   </div>
 
@@ -20,16 +21,17 @@
   <div class="p-3 border-bottom">
     <h6 class="text-uppercase text-muted fw-bold mb-3">Library</h6>
     <div class="list-group list-group-flush">
-      <button
-        *ngFor="let item of libraryItems"
-        type="button"
-        class="list-group-item list-group-item-action border-0 ps-2"
-        [class.active]="selectedItem === item.label"
-        (click)="selectItem(item.label)"
-      >
-        <span class="me-2">{{ item.icon }}</span>
-        {{ item.label }}
-      </button>
+      @for (item of libraryItems; track item) {
+        <button
+          type="button"
+          class="list-group-item list-group-item-action border-0 ps-2"
+          [class.active]="selectedItem === item.label"
+          (click)="selectItem(item.label)"
+          >
+          <span class="me-2">{{ item.icon }}</span>
+          {{ item.label }}
+        </button>
+      }
     </div>
   </div>
 

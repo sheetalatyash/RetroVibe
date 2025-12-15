@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { Header } from '../../shared-component/header/header';
 
 @Component({
   selector: 'app-pro',
   standalone: true,
-  imports: [CommonModule, Header],
+  imports: [Header],
   templateUrl: './pro.html',
   styleUrl: './pro.scss',
 })
