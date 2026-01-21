@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
 import { Home } from './pages/home/home';
 import { Pro } from './pages/pro/pro';
-import { EnquiryForm } from './pages/enquiry-form/enquiry-form';
 import { Signup } from './pages/Auth/signup/signup';
+import { TusUploadComponent } from './pages/tus-upload/tus-upload';
 
 export const routes: Routes = [
   {
@@ -21,8 +21,8 @@ export const routes: Routes = [
     component: Pro,
   },
   {
-    path: 'enquiry-form',
-    component: EnquiryForm,
+    path: 'upload',
+    component: TusUploadComponent,
   },
   //wild card route for a 404 page
   {

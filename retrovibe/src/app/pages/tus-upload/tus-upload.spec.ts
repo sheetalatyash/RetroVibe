@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EnquiryForm } from './enquiry-form';
+import { TusUpload } from './tus-upload';
 
-describe('EnquiryForm', () => {
-  let component: EnquiryForm;
-  let fixture: ComponentFixture<EnquiryForm>;
+describe('TusUpload', () => {
+  let component: TusUpload;
+  let fixture: ComponentFixture<TusUpload>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [EnquiryForm]
+      imports: [TusUpload]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(EnquiryForm);
+    fixture = TestBed.createComponent(TusUpload);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

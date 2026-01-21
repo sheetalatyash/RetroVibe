@@ -1,0 +1,17 @@
+<h2>Resumable File Upload (Angular)</h2>
+
+<input type="file" (change)="onFileSelected($event)" />
+
+<br /><br />
+
+<button (click)="startUpload()" [disabled]="!file || isUploading">Start Upload</button>
+
+<button (click)="pauseUpload()" [disabled]="!isUploading || isPaused">Pause</button>
+
+<button (click)="resumeUpload()" [disabled]="!isUploading || !isPaused">Resume</button>
+
+<br /><br />
+
+<progress [attr.value]="progress" max="100"></progress>
+<p>{{ progress | number: '1.2-2' }}%</p>
+<p>{{ uploadStatus }}</p>
